@@ -7,7 +7,7 @@ import { socialLinks } from "../utils/data/socialLinks";
 
 function HomePage() {
   return (
-    <main className="relative min-h-screen bg-dark text-slate-50 flex flex-col">
+    <main className="relative min-h-screen flex flex-col">
       <Header />
       <SocialMidia links={socialLinks} />
       {/* <List items={tasks}>

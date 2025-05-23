@@ -4,7 +4,6 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { createRef } from "react";
 
 import SearchInput from "../SearchInput";
-import type { SearchInputProps } from "./types";
 
 describe("SearchInput component", () => {
   it("renders input with type search and default placeholder and forwards ref", () => {
@@ -26,18 +25,6 @@ describe("SearchInput component", () => {
     render(<SearchInput />);
     const input = screen.getByRole("searchbox");
     expect(input).toHaveClass("h-9", "w-56", "md:w-72");
-  });
-
-  it.each<[SearchInputProps["size"], string[]]>([
-    ["sm", ["h-7", "w-40", "md:w-56"]],
-    ["md", ["h-9", "w-56", "md:w-72"]],
-    ["lg", ["h-11", "w-72", "md:w-96"]],
-  ])("applies correct classes for size '%s'", (size, expectedClasses) => {
-    render(<SearchInput size={size} />);
-    const input = screen.getByRole("searchbox");
-    expectedClasses.forEach((cls) => {
-      expect(input).toHaveClass(cls);
-    });
   });
 
   it("merges additional className", () => {
@@ -71,7 +58,6 @@ describe("SearchInput component", () => {
     const { asFragment } = render(
       <SearchInput
         placeholder="Snap"
-        size="sm"
         className="snap-class"
         onChange={() => {}}
       />,

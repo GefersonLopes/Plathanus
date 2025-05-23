@@ -1,7 +1,7 @@
+import type { HTMLMotionProps } from "framer-motion";
 import type { InputHTMLAttributes } from "react";
 
-export interface SearchInputProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "size"> {
-  placeholder?: string;
-  size?: "sm" | "md" | "lg";
-}
+export type SearchInputProps = InputHTMLAttributes<HTMLInputElement> &
+  HTMLMotionProps<"input"> & {
+    size?: "sm" | "md" | "lg";
+  };

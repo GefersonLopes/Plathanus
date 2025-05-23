@@ -1,38 +1,41 @@
-const Header = () => {
+import { countries } from "../../../utils/data/country";
+import NavLink from "../../layout/NavLink";
+import Button from "../Button";
+import Logo from "../Logo";
+import SearchInput from "../SearchInput";
+import { Select } from "../Select";
+import { navItems } from "./data";
+
+export default function Header() {
   return (
-    <header className="w-full relative">
-      <div className="h-[280px] w-full overflow-hidden">
-        <img
-          src="/assets/cover.jpg"
-          alt="Capa"
-          width={1920}
-          height={1080}
-          className="object-cover w-full h-full max-h-[280px] rotate-360"
-        />
-      </div>
+    <header className="w-full">
+      <div className="mx-auto flex max-w-[1200px] h-[51px] items-center justify-between gap-6 px-4 py-10">
+        <Logo />
 
-      <div className="absolute top-40 left-1/2 -translate-x-1/2">
-        <div className="w-[232px] h-[232px] rounded-full overflow-hidden">
-          <img
-            src="/assets/profile.jpg"
-            alt="Avatar"
-            width={160}
-            height={160}
-            className="object-cover object-[center_40%]  w-full h-full"
-          />
+        <nav aria-label="Site" className="hidden gap-10 lg:flex items-center">
+          {navItems.map(({ to, label }) => (
+            <NavLink key={to} to={to} label={label} />
+          ))}
+          <SearchInput placeholder="Pesquisar" />
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <aside className="flex items-center gap-2">
+            <Button variant="primary" className="py-2">
+              Fale conosco
+            </Button>
+            <form className="flex items-center gap-2 w-6">
+              <Select
+                id="currency"
+                label=""
+                defaultValue="BR"
+                className=" space-x-[-20px] text-white"
+                options={countries}
+              />
+            </form>
+          </aside>
         </div>
-      </div>
-
-      <div className="pt-20 pt-30 text-center">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase">
-          Emilly Melhor
-        </h1>
-        <p className="mt-1 text-sm sm:text-base text-gray-400">
-          CONHEÇA O MELHOR DE MIM! 😉
-        </p>
       </div>
     </header>
   );
-};
-
-export default Header;
+}

@@ -15,7 +15,7 @@ const LinearEffectImg = ({
 }: LinearEffectImgProps) => {
   return (
     <div
-      className={clsx("relative w-full h-full overflow-hidden", className)}
+      className={clsx("relative w-full overflow-hidden", className)}
       {...props}
     >
       <img
@@ -34,7 +34,7 @@ const LinearEffectImg = ({
         )}
       />
 
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 flex h-full w-full">{children}</div>
     </div>
   );
 };

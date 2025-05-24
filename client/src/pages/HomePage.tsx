@@ -7,7 +7,7 @@ const breadcrumbItems = [
 
 function HomePage() {
   return (
-    <section className="bg-dark w-full h-[617px]">
+    <section className="bg-dark w-full">
       <Hero breadcrumbItems={breadcrumbItems} />
       {/* <List items={tasks}>
         {(item) => <LinkCard {...item} className="max-w-lg" />}

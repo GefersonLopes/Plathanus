@@ -11,7 +11,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "rounded-lg font-medium focus:outline-none focus-visible:ring text-poppins";
+    "rounded-lg font-medium focus:outline-none focus-visible:ring text-poppins cursor-pointer";
   const variants: Record<string, string> = {
     primary:
       "bg-primary text-light hover:bg-primary/80 focus-visible:ring-primary/60",
@@ -19,6 +19,7 @@ export default function Button({
       "bg-secondary text-light hover:bg-secondary/80 focus-visible:ring-secondary/60",
     tertiary:
       "bg-tertiary text-light hover:bg-tertiary/80 focus-visible:ring-tertiary/60",
+    custom: "",
   };
   const sizes: Record<string, string> = {
     sm: "px-3 py-1 text-sm",

@@ -1,6 +1,14 @@
+import Hero from "../components/layout/Hero";
+
+const breadcrumbItems = [
+  { label: "Início", href: "/" },
+  { label: "Linha Orthopedic", href: "#orthopedic" },
+];
+
 function HomePage() {
   return (
-    <section className="bg-dark h-screen flex flex-col items-center justify-center">
+    <section className="bg-dark w-full h-[617px]">
+      <Hero breadcrumbItems={breadcrumbItems} />
       {/* <List items={tasks}>
         {(item) => <LinkCard {...item} className="max-w-lg" />}
       </List> */}

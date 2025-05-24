@@ -29,7 +29,7 @@ export const Select: React.FC<SelectProps> = ({
         {label}
       </label>
 
-      <div className="flex-1 min-w-[140px]">
+      <div className="flex">
         <ReactSelect
           inputId={id}
           classNamePrefix="react-select"

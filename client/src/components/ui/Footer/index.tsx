@@ -18,12 +18,7 @@ export const Footer: React.FC<FooterProps> = ({
   address,
   className,
 }) => (
-  <footer
-    className={clsx(
-      "w-full lg:h-[404px] bg-quaternary text-gray-200",
-      className,
-    )}
-  >
+  <footer className={clsx("w-full bg-quaternary text-gray-200", className)}>
     <section
       className={clsx(
         "w-full md:px-8",
@@ -60,7 +55,6 @@ export const Footer: React.FC<FooterProps> = ({
               <SocialLinks
                 title="Nos acompanhe também nas redes:"
                 socials={socials}
-                className="hidden lg:block"
               />
             )}
           </aside>
@@ -81,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({
           id="currency"
           label="Selecionar País"
           defaultValue="BR"
-          className="ml-23 sm:ml-0 lg:px-20 space-x-[-20px] text-white"
+          className="lg:px-20 space-x-[-20px] text-white"
           options={countries}
         />
       </form>

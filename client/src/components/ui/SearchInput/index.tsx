@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { forwardRef } from "react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { RiSearchLine } from "react-icons/ri";
 
 import type { SearchInputProps } from "./types";
@@ -16,25 +16,23 @@ const SearchInput = forwardRef<
     lg: "h-11 w-72 md:w-96",
   };
 
-  const [open, setOpen] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [open, setOpen] = useState(props?.open ?? false);
 
   const handleBlur = () => setOpen(false);
 
   return (
     <motion.form
       layout
-      className="relative flex items-center"
+      className="relative flex items-center w-full"
       onSubmit={(e) => e.preventDefault()}
     >
       <motion.input
-        ref={inputRef}
         type="search"
         initial={{ width: 0, opacity: 0, marginRight: 0 }}
         animate={
           open
             ? {
-                width: 160,
+                width: "100%",
                 opacity: 1,
                 pointerEvents: "auto",
                 marginRight: 8,
@@ -47,11 +45,12 @@ const SearchInput = forwardRef<
               }
         }
         transition={{ type: "spring", stiffness: 250, damping: 30 }}
-        onBlur={handleBlur}
+        onBlur={!props?.open ? handleBlur : undefined}
         className={clsx(
           "mr-2 rounded-full bg-white px-3 py-1 text-sm",
-          "text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-300",
+          "text-gray-700 placeholder-gray-400 focus:none focus:ring-1 focus:ring-gray-300",
           "focus:ring-2 focus:ring-primary-500",
+          "border border-gray-300 shadow-sm",
           sizeClasses[size],
           className,
         )}
@@ -68,8 +67,7 @@ const SearchInput = forwardRef<
           "bg-gray-100 text-quaternary hover:bg-gray-200",
         )}
         onClick={() => {
-          setOpen((v) => !v);
-          setTimeout(() => inputRef.current?.focus(), 150);
+          setOpen(() => true);
         }}
       >
         <RiSearchLine size={14} />

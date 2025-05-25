@@ -63,8 +63,8 @@ const SearchInput = forwardRef<
         type="button"
         aria-label={open ? "Fechar busca" : "Abrir busca"}
         className={clsx(
-          "grid h-10 w-10 place-items-center rounded-full",
-          "bg-gray-100 text-quaternary hover:bg-gray-200",
+          "bg-gray-50 grid h-10 w-10 place-items-center rounded-full",
+          "text-quaternary cursor-pointer",
         )}
         onClick={() => {
           setOpen(() => true);

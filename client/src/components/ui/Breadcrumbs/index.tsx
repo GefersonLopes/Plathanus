@@ -16,7 +16,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className }) => {
   return (
     <nav
       className={clsx(
-        "flex items-center space-x-1 font-raleway text-base text-[#989D9E] text-medium",
+        "flex items-center space-x-1 font-raleway text-base text-[#989D9E] font-medium",
         className,
       )}
       aria-label="Breadcrumb"

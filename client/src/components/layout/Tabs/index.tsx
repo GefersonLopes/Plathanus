@@ -41,10 +41,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs, className }) => {
               variant="custom"
               className={clsx(
                 "rounded-lg !px-2 py-2 transition font-raleway",
-                "text-base text-medium hover:bg-[#A75897] hover:text-white",
+                "text-base font-medium hover:bg-[#A75897] hover:text-white",
                 isActive
                   ? "bg-secondary text-white"
-                  : "bg-transparent text-secondary",
+                  : "bg-gray-50 text-secondary",
               )}
             >
               {tab.label}

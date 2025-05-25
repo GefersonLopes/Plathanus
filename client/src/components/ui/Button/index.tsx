@@ -12,13 +12,15 @@ export default function Button({
 }: ButtonProps) {
   const base =
     "rounded-lg font-medium focus:outline-none focus-visible:ring text-poppins cursor-pointer";
+  const disabled =
+    "disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:bg-gray-300";
   const variants: Record<string, string> = {
     primary:
-      "bg-primary text-light hover:bg-primary/80 focus-visible:ring-primary/60",
+      "bg-primary font-light text-white hover:bg-primary/80 focus-visible:ring-primary/60",
     secondary:
-      "bg-secondary text-light hover:bg-secondary/80 focus-visible:ring-secondary/60",
+      "bg-secondary font-light text-white hover:bg-secondary/80 focus-visible:ring-secondary/60",
     tertiary:
-      "bg-tertiary text-light hover:bg-tertiary/80 focus-visible:ring-tertiary/60",
+      "bg-tertiary font-light text-white hover:bg-tertiary/80 focus-visible:ring-tertiary/60",
     custom: "",
   };
   const sizes: Record<string, string> = {
@@ -30,7 +32,13 @@ export default function Button({
   return (
     <button
       type={type}
-      className={clsx(base, variants[variant], sizes[size], className)}
+      className={clsx(
+        base,
+        variants[variant],
+        sizes[size],
+        disabled,
+        className,
+      )}
       {...props}
     >
       {children}

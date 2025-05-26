@@ -91,7 +91,7 @@ const ProductAbout = ({
   ];
 
   return (
-    <section className="mt-4 border-t border-[#D5D7D8]">
+    <section className="border-t border-[#D5D7D8]">
       {sections.map((section) => (
         <FilterSection
           key={section.title}

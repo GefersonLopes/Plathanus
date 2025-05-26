@@ -5,6 +5,7 @@ import ProductAbout from "../components/layout/ProductAbout";
 import ProductDetails from "../components/layout/ProductDetails";
 import ProductsCarousel from "../components/layout/ProductsCorrousel";
 import { products } from "../components/layout/ProductsList/data";
+import QualitySection from "../components/layout/QualitySection";
 import Breadcrumbs from "../components/ui/Breadcrumbs";
 import VideoThumbnail from "../components/ui/Video";
 import { downloadBrochure } from "../utils/generics/downloadImg";
@@ -46,6 +47,11 @@ const ProductPage = () => {
         src="/assets/covers/thumb.png"
         alt="Vídeo de apresentação do produto"
         className="w-full h-auto mt-6 mb-4"
+      />
+      <QualitySection
+        note="Antes de utilizar o produto, leia atentamente as precauções e instruções de uso."
+        productImage="/assets/covers/quality.png"
+        productImageAlt={product?.title || ""}
       />
       <ProductAbout {...product} title="Órtese Splint Bilateral" />
       <ProductsCarousel

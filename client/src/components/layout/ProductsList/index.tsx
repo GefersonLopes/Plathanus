@@ -66,7 +66,7 @@ const ProductsList = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-white">
+    <section className="w-full bg-white">
       <div className="max-w-[1400px] 2xl:max-w-[100%] px-4 md:px-16 py-6 flex flex-col md:flex-row gap-6">
         <FilterSidebar />
 

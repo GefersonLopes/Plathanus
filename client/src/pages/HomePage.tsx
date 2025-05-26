@@ -14,9 +14,6 @@ function HomePage() {
       <Hero breadcrumbItems={breadcrumbItems} />
       <Tabs tabs={tabItems} className="bg-white" />
       <ProductsList />
-      {/* <List items={tasks}>
-        {(item) => <LinkCard {...item} className="max-w-lg" />}
-      </List> */}
     </section>
   );
 }

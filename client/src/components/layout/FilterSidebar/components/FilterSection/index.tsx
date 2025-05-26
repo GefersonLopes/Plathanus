@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import type { ReactNode } from "react";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 interface FilterSectionProps {
   title: string;
@@ -29,7 +29,7 @@ export const FilterSection = ({
     >
       <h3 className="font-medium cursor-pointer">{title}</h3>
       <span className="text-sm cursor-pointer">
-        {isOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}
+        {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
       </span>
     </button>
     <AnimatePresence initial={false}>
@@ -42,7 +42,7 @@ export const FilterSection = ({
           transition={{ duration: 0.3 }}
           style={{ overflow: "hidden" }}
         >
-          <div className="py-2 bg-gray-50">{children}</div>
+          <div className={clsx("py-2 bg-gray-50", className)}>{children}</div>
         </motion.div>
       )}
     </AnimatePresence>

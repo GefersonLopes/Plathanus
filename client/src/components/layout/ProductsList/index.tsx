@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useMemo, useState } from "react";
+import { GoDownload } from "react-icons/go";
 
 import { useProductStore } from "../../../store/useProductStore";
 import Button from "../../ui/Button";
@@ -8,7 +9,6 @@ import SearchInput from "../../ui/SearchInput";
 import { FilterSidebar } from "../FilterSidebar";
 import ProductCard from "../ProductCard";
 import { products } from "./data";
-
 const ProductsList = () => {
   const itemsPerPage = 9;
 
@@ -84,11 +84,11 @@ const ProductsList = () => {
             <Button
               onClick={handleDownloadCatalog}
               className={clsx(
-                "bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90",
+                "bg-primary text-white !px-2 py-2 rounded-lg flex items-center gap-2",
               )}
               disabled={paginatedProducts.length === 0}
             >
-              Baixar Catálogo
+              Baixar Catálogo <GoDownload size={16} />
             </Button>
           </div>
 
